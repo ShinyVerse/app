@@ -8,6 +8,7 @@ import girl from "../assets/girl.svg";
 const Landing = () => {
   return (
     <Wrapper>
+      <p className="greeting">Hi, I'm Laura</p>
       <div className="land">
         <div className="outer">
           <div className="wrapper">
@@ -48,10 +49,18 @@ const Wrapper = styled.div`
     }
   }
 
+  .greeting {
+    font-family: "Dancing Script", cursive;
+    font-size: 3em;
+    color: #246d1d;
+  }
+
   .land {
     background: url("../assets/flower.svg") no-repeat fixed center;
     width: 100%;
     height: 500px;
+    margin: 20px;
+    position: absolute;
   }
 
   .outer {
