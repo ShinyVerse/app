@@ -72,14 +72,14 @@ const Wrapper = styled.div`
     padding: 50px;
   }
   .first {
-    background-color: #d6c3ea;
+    background-color: rgba(229, 242, 255, 0.8);
   }
 
   .second {
-    background-color: #abe3c9;
+    background-color: rgba(242, 229, 255, 0.8);
   }
 
   .third {
-    background-color: #f2e3f2;
+    background-color: rgba(168, 255, 210, 0.3);
   }
 `;
