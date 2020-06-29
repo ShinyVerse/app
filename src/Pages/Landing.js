@@ -8,6 +8,36 @@ import sunflower from "../assets/flower.svg";
 import tomato from "../assets/tomato.svg";
 import girl from "../assets/girl.svg";
 
+const styledPopUpElement = (
+  top,
+  left,
+  zIndex,
+  animationSpeed,
+  imgSrc,
+  imgAlt,
+) => {
+  const SubWrapper = styled.div`
+    .outer {
+      top: ${top};
+      left: ${left};
+    }
+
+    .item {
+      z-index: ${zIndex};
+      animation: popUp ${animationSpeed} ease;
+    }
+  `;
+  return (
+    <SubWrapper>
+      <div className="outer">
+        <div className="wrapper">
+          <img className="item" src={imgSrc} alt={imgAlt} />
+        </div>
+      </div>
+    </SubWrapper>
+  );
+};
+
 const Landing = () => {
   return (
     <Wrapper>
@@ -15,27 +45,35 @@ const Landing = () => {
         <section className="image">
           <p className="greeting">Hi, I'm Laura</p>
           <div className="land">
-            <div className="outer">
-              <div className="wrapper">
-                <img className="item" src={sunflower} alt="flower" />
-              </div>
-            </div>
+            {styledPopUpElement(
+              "100px",
+              "0px",
+              "100",
+              "1.5s",
+              sunflower,
+              "flower",
+            )}
 
-            <div className="outer2">
-              <div className="wrapper">
-                <img className="item2" src={sunflower} alt="flower" />
-              </div>
-            </div>
-            <div className="outer3">
-              <div className="wrapper">
-                <img className="item3" src={tomato} alt="tomato" />
-              </div>
-            </div>
-            <div className="outer4">
-              <div className="wrapper">
-                <img className="item4" src={girl} alt="girl" />
-              </div>
-            </div>
+            {styledPopUpElement(
+              "120px",
+              "250px",
+              "100",
+              "1.5s",
+              sunflower,
+              "flower",
+            )}
+
+            {styledPopUpElement(
+              "140px",
+              "350px",
+              "120",
+              "2s",
+              tomato,
+              "tomato",
+            )}
+
+            {styledPopUpElement("125px", "150px", "110", "1.2s", girl, "girl")}
+
             <img src={land} alt="land" />
           </div>
         </section>
@@ -76,14 +114,6 @@ const Wrapper = styled.div`
     overflow-x: hidden;
   }
 
-  .outer {
-    width: 500px;
-    height: 400px;
-    // border: 1px black solid;
-    position: absolute;
-    top: 100px;
-  }
-
   .wrapper {
     position: relative;
     width: 200px;
@@ -93,67 +123,18 @@ const Wrapper = styled.div`
     margin: auto;
   }
 
+  .outer {
+    width: 500px;
+    height: 400px;
+    // border: 1px black solid;
+    position: absolute;
+  }
+
   .item {
     position: relative;
     height: 100%;
     width: 100%;
     margin: auto;
-    z-index: 100;
-    animation: popUp 1.5s ease;
-  }
-
-  .outer2 {
-    width: 500px;
-    height: 400px;
-    // border: 1px black solid;
-    position: absolute;
-    top: 120px;
-    left: 250px;
-  }
-
-  .item2 {
-    position: relative;
-    height: 100%;
-    width: 100%;
-    margin: auto;
-    z-index: 100;
-    animation: popUp 1.5s ease;
-  }
-
-  .outer3 {
-    width: 500px;
-    height: 400px;
-    // border: 1px black solid;
-    position: absolute;
-    top: 140px;
-    left: 350px;
-  }
-
-  .item3 {
-    position: relative;
-    height: 100%;
-    width: 100%;
-    margin: auto;
-    z-index: 120;
-    animation: popUp 2s ease;
-  }
-
-  .outer4 {
-    width: 500px;
-    height: 400px;
-    // border: 1px black solid;
-    position: absolute;
-    top: 125px;
-    left: 150px;
-  }
-
-  .item4 {
-    position: relative;
-    height: 100%;
-    width: 100%;
-    margin: auto;
-    z-index: 110;
-    animation: popUp 1.2s ease;
   }
 
   .image {
