@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 function Nav() {
   return (
@@ -11,6 +12,11 @@ function Nav() {
         </li>
         <li>
           <Link to="/portfolio">Portfolio</Link>
+        </li>
+        <li>
+          <HashLink smooth to="#contact">
+            Contact
+          </HashLink>
         </li>
       </ul>
     </Wrapper>
