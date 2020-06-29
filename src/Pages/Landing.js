@@ -7,44 +7,145 @@ import land from "../assets/land.png";
 import sunflower from "../assets/flower.svg";
 import tomato from "../assets/tomato.svg";
 import girl from "../assets/girl.svg";
+import strawberry from "../assets/strawberry.svg";
 
 const images = [
   {
-    w320: {
-      top: "40px",
-      left: "-150px",
-      zIndex: "100",
+    src: sunflower,
+    speed: "1.7s",
+    alt: "sunflower",
+    sizes: {
+      w320: {
+        top: "40px",
+        left: "-150px",
+        zIndex: "100",
+      },
+      w768: {
+        top: "60px",
+        left: "-90px",
+      },
     },
-    w768: {
-      top: "60px",
-      left: "-120px",
+  },
+  {
+    src: sunflower,
+    speed: "2s",
+    alt: "sunflower",
+    type: "small-wrapper",
+    sizes: {
+      w320: {
+        top: "65px",
+        left: "-185px",
+        zIndex: "140",
+      },
+      w768: {
+        top: "140px",
+        left: "-10px",
+      },
+    },
+  },
+  {
+    src: sunflower,
+    speed: "1.5s",
+    alt: "sunflower",
+    sizes: {
+      w320: {
+        top: "30px",
+        right: "-150px",
+        zIndex: "100",
+      },
+      w768: {
+        top: "45px",
+        right: "-90px",
+      },
+    },
+  },
+  {
+    src: strawberry,
+    speed: "1.8s",
+    alt: "strawberry",
+    type: "small-wrapper",
+    sizes: {
+      w320: {
+        top: "70px",
+        left: "-150px",
+        zIndex: "130",
+      },
+      w768: {
+        top: "130px",
+        left: "-40px",
+      },
+    },
+  },
+  {
+    src: tomato,
+    speed: "2s",
+    alt: "tomato",
+    sizes: {
+      w320: {
+        top: "40px",
+        right: "-180px",
+        zIndex: "100",
+      },
+      w768: {
+        top: "70px",
+        right: "-45px",
+      },
+    },
+  },
+  {
+    src: girl,
+    speed: "1.2s",
+    alt: "girl",
+    sizes: {
+      w320: {
+        top: "50px",
+        right: "-90px",
+        zIndex: "100",
+      },
+      w768: {
+        top: "70px",
+        left: "64px",
+      },
     },
   },
 ];
 
-const styledPopUpElement = (details, animationSpeed, imgSrc, imgAlt) => {
+const styledPopUpElement = (
+  sizes,
+  animationSpeed,
+  imgSrc,
+  imgAlt,
+  index,
+  type = "normal",
+) => {
   const SubWrapper = styled.div`
     .outer {
-      top: ${details.w320.top};
-      left: ${details.w320.left};
+      top: ${sizes.w320.top};
+      left: ${sizes.w320.left};
+      right: ${sizes.w320.right};
+    }
+    .small-wrapper {
+      width: 50px;
+      height: 50px;
     }
 
     .item {
-      z-index: ${details.w320.zIndex};
+      z-index: ${sizes.w320.zIndex};
       animation: popUp ${animationSpeed} ease;
     }
 
     @media (min-width: 768px) {
       .outer {
-        top: ${details.w768.top};
-        left: ${details.w768.left};
+        top: ${sizes.w768.top};
+        left: ${sizes.w768.left};
+        right: ${sizes.w768.right};
       }
     }
   `;
   return (
-    <SubWrapper>
+    <SubWrapper key={`feature-img-${index}`}>
       <div className="outer">
-        <div className="wrapper">
+        <div className={`wrapper ${type}`}>
           <img className="item" src={imgSrc} alt={imgAlt} />
         </div>
       </div>
@@ -59,31 +160,16 @@ const Landing = () => {
         <section className="image">
           <p className="greeting">Hi, I'm Laura</p>
           <div className="land">
-            {images.map((imageDetails) =>
-              styledPopUpElement(imageDetails, "1.5s", sunflower, "sunflower"),
+            {images.map((image, index) =>
+              styledPopUpElement(
+                image.sizes,
+                image.speed,
+                image.src,
+                image.alt,
+                index,
+                image.type,
+              ),
             )}
-            {/* {styledPopUpElement(
-              "40px",
-              "-150px",
-              "100",
-              "1.5s",
-              sunflower,
-              "flower",
-            )} */}
-
-            {/* {styledPopUpElement(
-              "30px",
-              "-40px",
-              "100",
-              "1.5s",
-              sunflower,
-              "flower",
-            )}
-
-            {styledPopUpElement("40px", "0px", "120", "2s", tomato, "tomato")}
-
-            {styledPopUpElement("50px", "-90px", "110", "1.2s", girl, "girl")} */}
-
             <img className="bgImage" src={land} alt="land" />
           </div>
         </section>
@@ -110,16 +196,16 @@ const Wrapper = styled.div`
   .greeting {
     font-family: "Dancing Script", cursive;
     font-size: 3em;
+    text-align: center;
     color: #246d1d;
   }
 
   .land {
     background: url("../assets/land.png") no-repeat fixed center;
-    width: 98vw;
+    width: 100vw;
     height: 300px;
     margin: 15px auto 5px;
     position: absolute;
-    border: 2px black solid;
     overflow-y: hidden;
     overflow-x: hidden;
   }
@@ -130,7 +216,6 @@ const Wrapper = styled.div`
   }
 
   .wrapper {
-    // border: 2px black solid;
     position: relative;
     width: 70px;
     height: 70px;
@@ -142,7 +227,6 @@ const Wrapper = styled.div`
   .outer {
     width: 500px;
     height: 400px;
-    // border: 1px black solid;
     position: absolute;
   }
 
@@ -155,88 +239,47 @@ const Wrapper = styled.div`
 
   .image {
     postiion: relative;
-    border: 3px solid red;
   }
   .footer {
     postiion: relative;
-    border: 3px solid black;
     margin-top: 520px;
+  }
+  @media (min-width: 375px) {
+    .land {
+      width: 80%;
+      margin: 5px 10% 5px;
+    }
   }
 
   @media (min-width: 768px) {
     .land {
-      background: url("../assets/land.svg") no-repeat fixed center;
       width: 80%;
       height: 500px;
-      margin: 15px 10% 5px;
-      position: absolute;
-      border: 2px black solid;
-      overflow-y: hidden;
-      overflow-x: hidden;
     }
 
     .wrapper {
-      position: relative;
       width: 120px;
       height: 120px;
-      margin: auto;
-      overflow-y: hidden;
-      margin: auto;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .land {
+      width: 60%;
+      margin: 5px 20% 5px;
     }
 
-    .outer {
-      width: 500px;
-      height: 400px;
-      // border: 1px black solid;
-      position: absolute;
+    .wrapper {
+      width: 130px;
+      height: 130px;
     }
-
-    .item {
-      position: relative;
-      height: 100%;
-      width: 100%;
-      margin: auto;
-    }
-
-    .image {
-      postiion: relative;
-      border: 3px solid red;
-    }
-    .footer {
-      postiion: relative;
-      border: 3px solid black;
-      margin-top: 520px;
+  }
+  @media (min-width: 1400px) {
+    .land {
+      width: 45%;
+      margin: 5px 27% 5px;
     }
   }
 `;
 
 export default Landing;
-
-// {styledPopUpElement(
-//   "100px",
-//   "0px",
-//   "100",
-//   "1.5s",
-//   sunflower,
-//   "flower",
-// )}
-
-// {styledPopUpElement(
-//   "120px",
-//   "250px",
-//   "100",
-//   "1.5s",
-//   sunflower,
-//   "flower",
-// )}
-
-// {styledPopUpElement(
-//   "140px",
-//   "350px",
-//   "120",
-//   "2s",
-//   tomato,
-//   "tomato",
-// )}
-
-// {styledPopUpElement("125px", "150px", "110", "1.2s", girl, "girl")}
