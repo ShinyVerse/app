@@ -18,7 +18,7 @@ const images = [
     alt: "sunflower",
     sizes: {
       w320: {
-        top: "10%",
+        top: "11%",
         left: "20%",
         zIndex: "100",
       },
@@ -31,8 +31,8 @@ const images = [
     type: "small-wrapper",
     sizes: {
       w320: {
-        top: "23%",
-        left: "35%",
+        top: "21%",
+        left: "30%",
         zIndex: "140",
       },
     },
@@ -102,9 +102,8 @@ const styledPopUpElement = (
       left: ${sizes.w320.left};
     }
     .small-wrapper {
-      position: absolute;
-      width: 50px;
-      height: 50px;
+      width: 60px;
+      height: 60px;
     }
 
     .large-wrapper {
@@ -125,6 +124,7 @@ const styledPopUpElement = (
       }
       .small-wrapper {
         margin-top: 30px;
+        margin-left: 30px;
       }
     }
   `;
