@@ -20,6 +20,7 @@ function App({ location }) {
           <section className="route-section">
             <Switch location={location}>
               <Route exact path="/" component={Landing} />
+              <Route exact path="app/" component={Landing} />
               <Route path="/portfolio" component={Portfolio} />
               <Route render={() => <div>Not Found</div>} />
             </Switch>
