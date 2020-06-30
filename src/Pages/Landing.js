@@ -43,7 +43,7 @@ const images = [
     alt: "sunflower",
     sizes: {
       w320: {
-        top: "11%",
+        top: "9.5%",
         left: "60%",
         zIndex: "100",
       },

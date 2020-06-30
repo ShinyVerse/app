@@ -68,9 +68,19 @@ const Wrapper = styled.div`
     height: 250px;
   }
 
-  .card {
+  .cards {
     padding: 50px;
+    width: 100%;
+    border: black solid 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
+
+  .containerItem {
+    margin-top: 15px;
+  }
+
   .first {
     background-color: rgba(229, 242, 255, 0.8);
   }

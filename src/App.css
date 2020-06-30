@@ -1,5 +1,39 @@
 * {
   /* background-color: #6666df; */
   margin: 0;
+
   padding: 0;
+}
+
+.btn {
+  width: 170px;
+  background-color: rgb(227, 100, 121);
+  font-size: 1.5em;
+  padding: 10px;
+  margin: 10px;
+  color: black;
+  text-decoration: none;
+  border-radius: 4px;
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin: auto;
+  -webkit-box-shadow: 0px 2px 3px 0px purple;
+  -moz-box-shadow: 0px 2px 3px 0px purple;
+  box-shadow: 0px 2px 3px 0px purple;
+  color: white;
+  margin: auto;
+}
+
+span {
+  margin: auto;
+}
+
+.btn:hover {
+  transition: 0.2s;
+  transform: translateY(2px);
+  -webkit-box-shadow: 0px 1px 2px 0px purple;
+  -moz-box-shadow: 0px 1px 2px 0px purple;
+  box-shadow: 0px 1px 2px 0px purple;
 }
