@@ -4,10 +4,12 @@ import styled from "styled-components";
 import { Contact } from "../Components/Contact";
 
 import land from "../assets/land.png";
-import sunflower from "../assets/flower.svg";
-import tomato from "../assets/tomato.svg";
-import girl from "../assets/girl.svg";
-import strawberry from "../assets/strawberry.svg";
+import sunflower2 from "../assets/sunflower2.svg";
+import sunflower from "../assets/sunflower-L.svg";
+import smallSunflower from "../assets/smallSunflower5.svg";
+import tomato from "../assets/largetomato.svg";
+import me from "../assets/me.svg";
+import strawberry from "../assets/smallStrawberry.svg";
 
 const images = [
   {
@@ -16,46 +18,34 @@ const images = [
     alt: "sunflower",
     sizes: {
       w320: {
-        top: "40px",
-        left: "-150px",
+        top: "10%",
+        left: "20%",
         zIndex: "100",
-      },
-      w768: {
-        top: "60px",
-        left: "-90px",
       },
     },
   },
   {
-    src: sunflower,
+    src: smallSunflower,
     speed: "2s",
-    alt: "sunflower",
+    alt: "smallSunflower",
     type: "small-wrapper",
     sizes: {
       w320: {
-        top: "65px",
-        left: "-185px",
+        top: "23%",
+        left: "35%",
         zIndex: "140",
-      },
-      w768: {
-        top: "140px",
-        left: "-10px",
       },
     },
   },
   {
-    src: sunflower,
+    src: sunflower2,
     speed: "1.5s",
     alt: "sunflower",
     sizes: {
       w320: {
-        top: "30px",
-        right: "-150px",
+        top: "11%",
+        left: "60%",
         zIndex: "100",
-      },
-      w768: {
-        top: "45px",
-        right: "-90px",
       },
     },
   },
@@ -63,16 +53,11 @@ const images = [
     src: strawberry,
     speed: "1.8s",
     alt: "strawberry",
-    type: "small-wrapper",
     sizes: {
       w320: {
-        top: "70px",
-        left: "-150px",
+        top: "14%",
+        left: "12%",
         zIndex: "130",
-      },
-      w768: {
-        top: "130px",
-        left: "-40px",
       },
     },
   },
@@ -82,29 +67,22 @@ const images = [
     alt: "tomato",
     sizes: {
       w320: {
-        top: "40px",
-        right: "-180px",
+        top: "13%",
+        left: "72%",
         zIndex: "100",
-      },
-      w768: {
-        top: "70px",
-        right: "-45px",
       },
     },
   },
   {
-    src: girl,
-    speed: "1.2s",
+    src: me,
+    speed: "2.2s",
     alt: "girl",
+    type: "large-wrapper",
     sizes: {
       w320: {
-        top: "50px",
-        right: "-90px",
+        top: "20px",
+        left: "37%",
         zIndex: "100",
-      },
-      w768: {
-        top: "70px",
-        left: "64px",
       },
     },
   },
@@ -122,11 +100,17 @@ const styledPopUpElement = (
     .outer {
       top: ${sizes.w320.top};
       left: ${sizes.w320.left};
-      right: ${sizes.w320.right};
     }
     .small-wrapper {
+      position: absolute;
       width: 50px;
       height: 50px;
+    }
+
+    .large-wrapper {
+      position: absolute;
+      width: 100px;
+      height: 100px;
     }
 
     .item {
@@ -134,11 +118,13 @@ const styledPopUpElement = (
       animation: popUp ${animationSpeed} ease;
     }
 
-    @media (min-width: 768px) {
-      .outer {
-        top: ${sizes.w768.top};
-        left: ${sizes.w768.left};
-        right: ${sizes.w768.right};
+    @media (min-width: 728px) {
+      .large-wrapper {
+        width: 170px;
+        height: 170px;
+      }
+      .small-wrapper {
+        margin-top: 30px;
       }
     }
   `;
@@ -216,7 +202,7 @@ const Wrapper = styled.div`
   }
 
   .wrapper {
-    position: relative;
+    position: absolute;
     width: 70px;
     height: 70px;
     margin: auto;
@@ -244,22 +230,23 @@ const Wrapper = styled.div`
     postiion: relative;
     margin-top: 520px;
   }
-  @media (min-width: 375px) {
+
+  @media (min-width: 500px) {
     .land {
-      width: 80%;
-      margin: 5px 10% 5px;
+      width: 60%;
+      margin: 5px 20% 5px;
     }
   }
 
-  @media (min-width: 768px) {
-    .land {
-      width: 80%;
-      height: 500px;
-    }
-
+  @media (min-width: 728px) {
     .wrapper {
       width: 120px;
       height: 120px;
+    }
+    .land {
+      width: 70%;
+      height: 500px;
+      margin: 5px 15% 5px;
     }
   }
 
