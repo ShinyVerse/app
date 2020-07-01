@@ -1,5 +1,5 @@
-import api from "./assets/api-storii.png";
-import storiiImg from "./assets/storii-desktop.png";
+import api from "./assets/server.svg";
+import storiiImg from "./assets/storii.gif";
 
 export const work = [
   {

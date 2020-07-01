@@ -168,6 +168,9 @@ const Landing = () => {
 };
 
 const Wrapper = styled.div`
+  .container {
+    background-color: rgb(232, 250, 254);
+  }
   @keyframes popUp {
     0% {
       margin-top: 200px;
@@ -180,6 +183,7 @@ const Wrapper = styled.div`
   }
 
   .greeting {
+    padding-top: 30px;
     font-family: "Dancing Script", cursive;
     font-size: 3em;
     text-align: center;
@@ -228,9 +232,8 @@ const Wrapper = styled.div`
   }
   .footer {
     postiion: relative;
-    margin-top: 520px;
+    margin-top: 400px;
   }
-
   @media (min-width: 500px) {
     .land {
       width: 60%;
@@ -260,11 +263,24 @@ const Wrapper = styled.div`
       width: 130px;
       height: 130px;
     }
+    .greeting {
+      font-size: 4.5em;
+    }
   }
   @media (min-width: 1400px) {
     .land {
       width: 45%;
       margin: 5px 27% 5px;
+    }
+
+    .greeting {
+      font-size: 5em;
+    }
+  }
+  @media (min-width: 1800px) {
+    .land {
+      width: 35%;
+      margin: 5px 32.5% 5px;
     }
   }
 `;
