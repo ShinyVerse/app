@@ -26,8 +26,9 @@ function Nav() {
 const Wrapper = styled.div`
   height: 50px;
   display: flex;
+  justify-content: center;
   align-items: center;
-  background-color: #f5f5f5;
+  background-color: white;
   ul {
     margin: 0;
     padding: 0;
@@ -40,6 +41,9 @@ const Wrapper = styled.div`
       font-size: 20px;
       color: #333;
     }
+  }
+  @media (min-width: 728px) {
+    justify-content: flex-start;
   }
 `;
 
