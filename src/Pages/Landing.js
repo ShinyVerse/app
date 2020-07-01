@@ -169,7 +169,7 @@ const Landing = () => {
 
 const Wrapper = styled.div`
   .container {
-    background-color: rgb(232, 250, 254);
+    background-color: rgba(232, 250, 254, 0.6);
   }
   @keyframes popUp {
     0% {
