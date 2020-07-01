@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import { Contact } from "../Components/Contact";
+import { Skills } from "../Components/Skills";
 
 import land from "../assets/land.png";
 import sunflower2 from "../assets/sunflower2.svg";
@@ -159,6 +160,16 @@ const Landing = () => {
             <img className="bgImage" src={land} alt="land" />
           </div>
         </section>
+        <section className="me-about">
+          <p className="me-about">
+            A London based fullstack developer with a focus on frontend with a
+            drive to make fun, readable and tested code.
+          </p>
+        </section>
+        <section className="skills">
+          <Skills />
+        </section>
+
         <section className="footer">
           <Contact />
         </section>
@@ -230,10 +241,21 @@ const Wrapper = styled.div`
   .image {
     postiion: relative;
   }
+
+  .skills {
+    postiion: relative;
+  }
+  .me-about {
+    postiion: relative;
+    margin-top: 250px;
+    font-size: 1.25em;
+    text-align: center;
+    padding-bottom: 20px;
+  }
   .footer {
     postiion: relative;
-    margin-top: 400px;
   }
+
   @media (min-width: 500px) {
     .land {
       width: 60%;
@@ -250,6 +272,10 @@ const Wrapper = styled.div`
       width: 70%;
       height: 500px;
       margin: 5px 15% 5px;
+    }
+    .me-about {
+      postiion: relative;
+      margin-top: 400px;
     }
   }
 
