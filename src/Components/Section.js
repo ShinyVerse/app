@@ -25,6 +25,8 @@ const Wrapper = styled.div`
 
   .section-content {
     margin-top: 10px;
+    font-size: 1.2em;
+    padding: 20px;
   }
 
   @media (min-width: 728px) {

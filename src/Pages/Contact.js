@@ -132,25 +132,18 @@ const Wrapper = styled.div`
 
   @media (min-width: 1800px) {
     .contact {
-      font-size: 3em;
+      font-size: 2.2em;
     }
     .email {
-      line-height: 100px;
+      line-height: 65px;
     }
     .emailIcon {
-      width: 80px;
-      height: 80px;
-
       margin: 10px 20px 0px 0px;
-    }
-    .avatar {
-      width: 600px;
-      height: 600px;
     }
 
     .icon {
-      width: 150px;
-      height: 150px;
+      width: 110px;
+      height: 110px;
       margin: 10px;
     }
   }

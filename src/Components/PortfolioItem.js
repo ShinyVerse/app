@@ -82,6 +82,7 @@ const Wrapper = styled.div`
     flex-direction: column;
     align-items: center;
     text-align: center;
+    font-size: 1.5em;
   }
 
   .card {

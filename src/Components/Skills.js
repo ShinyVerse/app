@@ -65,9 +65,9 @@ const Wrapper = styled.div`
 
   .heading {
     font-family: "Dancing Script", cursive;
-    font-size: 2em;
+    font-size: 2.8em;
     text-align: center;
-    color: #246d1d;
+
     margin: 10px;
   }
   @media (min-width: 728px) {
@@ -75,12 +75,13 @@ const Wrapper = styled.div`
       margin-top: 0px;
     }
     .heading {
-      font-size: 3em;
+      font-size: 2.8em;
     }
   }
   @media (min-width: 1024px) {
-    #skills {
-      // margin-top: 500px;
+    .heading {
+      font-size: 3.2em;
+      margin-bottom: 30px;
     }
   }
   @media (min-width: 1400px) {
