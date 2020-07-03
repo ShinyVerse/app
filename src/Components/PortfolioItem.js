@@ -116,13 +116,13 @@ const Wrapper = styled.div`
   }
   @media (min-width: 1024px) {
     .portfolioImg {
-      width: 70%;
+      width: 60%;
     }
     .cards {
       padding: 30px 20px 50px;
     }
     .about {
-      font-size: 1.4em;
+      font-size: 1.3em;
     }
   }
 
