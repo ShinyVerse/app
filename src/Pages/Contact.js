@@ -9,7 +9,7 @@ import instagram from "../assets/instagram.svg";
 
 const Link = (href, img, alt) => {
   return (
-    <a href={href} rel="noreferrer noopener" target="_blank">
+    <a key={alt} href={href} rel="noreferrer noopener" target="_blank">
       <img className="icon" src={img} alt={alt} />
     </a>
   );
