@@ -163,10 +163,10 @@ const Landing = () => {
         </section>
 
         <section className="me-about">
-          <Section content="A London based full stack developer, particularly passionate about front end development, with 1+ years commercial experience in agile environments." />
+          <Section content="A London based full stack developer, particularly passionate about front-end development, with 1+ years commercial experience in agile environments." />
           <Section
             title="How I can help"
-            content="I'm a developer that cares about good quality, readable and tested code. I'm a BDD/TDD and pair-programming enthusiast. My core stack is React, Javascript, Node and MongoDB. Other technologies I have worked with are Ruby, C# and some Unity."
+            content="I'm a developer who cares about good quality, readable and tested code. I'm a BDD/TDD and pair-programming enthusiast. My core stack is React, Javascript, Node and MongoDB. Other technologies I have worked with are Ruby, C# and some Unity."
           />
           <Section content="I'm familiar with the following testing frameworks: Jest, Enzyme, React Testing Library, Chai, Sinon, Supertest, Cypress, Selenium and Rspec." />
         </section>
