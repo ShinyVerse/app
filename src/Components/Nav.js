@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { HashLink } from "react-router-hash-link";
 
 function Nav() {
   return (
@@ -14,9 +13,7 @@ function Nav() {
           <Link to="/portfolio">Portfolio</Link>
         </li>
         <li>
-          <HashLink smooth to="#contact">
-            Contact
-          </HashLink>
+          <Link to="/contact">Contact</Link>
         </li>
       </ul>
     </Wrapper>
@@ -35,7 +32,7 @@ const Wrapper = styled.div`
   }
   li {
     display: inline-block;
-    margin-left: 20px;
+    margin: 0px 15px;
     a {
       text-decoration: none;
       font-size: 20px;

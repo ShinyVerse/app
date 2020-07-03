@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-import { Contact } from "../Components/Contact";
+import { Section } from "../Components/Section";
+
 import { Skills } from "../Components/Skills";
 
 import land from "../assets/land.png";
@@ -15,7 +16,7 @@ import strawberry from "../assets/smallStrawberry.svg";
 const images = [
   {
     src: sunflower,
-    speed: "1.7s",
+    speed: "2s",
     alt: "sunflower",
     sizes: {
       w320: {
@@ -40,7 +41,7 @@ const images = [
   },
   {
     src: sunflower2,
-    speed: "1.5s",
+    speed: "2.8s",
     alt: "sunflower",
     sizes: {
       w320: {
@@ -52,7 +53,7 @@ const images = [
   },
   {
     src: strawberry,
-    speed: "1.8s",
+    speed: "2.5s",
     alt: "strawberry",
     sizes: {
       w320: {
@@ -160,18 +161,17 @@ const Landing = () => {
             <img className="bgImage" src={land} alt="land" />
           </div>
         </section>
+
         <section className="me-about">
-          <p className="me-about">
-            A London based fullstack developer with a focus on frontend with a
-            drive to make fun, readable and tested code.
-          </p>
+          <Section content="A London based full stack developer, particularly passionate about front end development with 1+ years experience in agile environments." />
+          <Section
+            title="How I can help"
+            content="I'm a developer that promotes the benefits of testing, I write code in a BDD/TDD way. My core stack is MERN, other technologies I have used are Ruby, C# and some Unity."
+          />
+          <Section content="Testing frameworks I'm familiar with are Jest, Enzyme, React Testing Library, Chai, Sinon, Supertest, Cypress, Selenium and Rspec." />
         </section>
         <section className="skills">
           <Skills />
-        </section>
-
-        <section className="footer">
-          <Contact />
         </section>
       </div>
     </Wrapper>
@@ -251,9 +251,6 @@ const Wrapper = styled.div`
     font-size: 1.25em;
     text-align: center;
     padding-bottom: 20px;
-  }
-  .footer {
-    postiion: relative;
   }
 
   @media (min-width: 500px) {

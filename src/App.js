@@ -5,6 +5,7 @@ import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 import Landing from "./Pages/Landing";
 import Portfolio from "./Pages/Portfolio";
+import Contact from "./Pages/Contact";
 
 import "./App.css";
 
@@ -14,7 +15,7 @@ function App({ location }) {
       <TransitionGroup>
         <CSSTransition
           key={location.key}
-          timeout={{ enter: 300, exit: 300 }}
+          timeout={{ enter: 400, exit: 400 }}
           classNames={"fade"}
         >
           <section className="route-section">
@@ -22,7 +23,8 @@ function App({ location }) {
               <Route exact path="/" component={Landing} />
               <Route exact path="/app" component={Landing} />
               <Route path="/portfolio" component={Portfolio} />
-              <Route render={() => <div>Not Found</div>} />
+              <Route exact path="/contact" component={Contact} />
+              <Route render={() => <Landing />} />
             </Switch>
           </section>
         </CSSTransition>

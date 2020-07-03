@@ -87,10 +87,6 @@ const Wrapper = styled.div`
     #skills {
       // margin-top: 600px;
     }
-    .skill {
-      width: 160px;
-      height: 160px;
-    }
   }
 `;
 

@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 
-import { Contact } from "../Components/Contact";
-
 import { work } from "../work";
 import { PortfolioItem } from "../Components/PortfolioItem";
 
@@ -26,7 +24,6 @@ const Portfolio = () => {
             />
           );
         })}
-        <Contact />
       </div>
     </Wrapper>
   );
