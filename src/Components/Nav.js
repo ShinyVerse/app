@@ -7,7 +7,7 @@ function Nav() {
     <Wrapper>
       <ul>
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/app">Home</Link>
         </li>
         <li>
           <Link to="/portfolio">Portfolio</Link>
@@ -35,12 +35,18 @@ const Wrapper = styled.div`
     margin: 0px 15px;
     a {
       text-decoration: none;
-      font-size: 20px;
+      font-size: 1.5em;
       color: #333;
     }
   }
   @media (min-width: 728px) {
     justify-content: flex-start;
+
+    li {
+      a {
+        font-size: 1.8em;
+      }
+    }
   }
 `;
 
