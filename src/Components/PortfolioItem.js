@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Fade from "react-reveal/Fade";
 
 export const PortfolioItem = ({
   img,
@@ -32,33 +33,35 @@ export const PortfolioItem = ({
   return (
     <Wrapper>
       <div className={`card ${colorSetter}`}>
-        <div className="container cards">
-          <h1 className="smallHeading containerItem">{title}</h1>
-          {renderImgOrIframe()}
+        <Fade cascade left text>
+          <div className="container cards">
+            <h1 className="smallHeading containerItem">{title}</h1>
+            {renderImgOrIframe()}
 
-          <p className="containerItem about">{about}</p>
+            <p className="containerItem about">{about}</p>
 
-          {websiteURL && (
-            <a
-              className=" containerItem btn dark-btn"
-              href={websiteURL}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span>Website</span>
-            </a>
-          )}
-          {codeURL && (
-            <a
-              className="containerItem greyBtn btn"
-              href={codeURL}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span>Code</span>
-            </a>
-          )}
-        </div>
+            {websiteURL && (
+              <a
+                className=" containerItem btn dark-btn"
+                href={websiteURL}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>Website</span>
+              </a>
+            )}
+            {codeURL && (
+              <a
+                className="containerItem greyBtn btn"
+                href={codeURL}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>Code</span>
+              </a>
+            )}
+          </div>
+        </Fade>
       </div>
     </Wrapper>
   );
