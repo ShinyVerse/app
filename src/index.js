@@ -8,7 +8,7 @@ import Nav from "./Components/Nav";
 import * as serviceWorker from "./serviceWorker";
 
 const RouterWrapper = () => (
-  <Router basename="/app">
+  <Router>
     <div>
       <Nav />
       <App />
